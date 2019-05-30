@@ -50,7 +50,7 @@ Array.prototype.myEvery = function(callback){
 Array.prototype.myReduce = function(callback){
     let val = this[0];
     for(let i = 1; i < this.length; i++){
-        val = callback(this[i],val);
+        val = callback(val, this[i]);
     }
     return val;
 }
@@ -90,7 +90,7 @@ Array.prototype.myUnshift = function(obj){
 
 Object.grabKeys = function(obj){
     let newArray = [];
-    for (key in obj){
+    for (let key in obj){
         newArray.myPush(key);
     }
     return newArray;
@@ -98,7 +98,7 @@ Object.grabKeys = function(obj){
 
 Object.grabValues = function (obj){
     let newArray = [];
-    for (key in obj){
+    for (let key in obj){
         newArray.myPush(obj[key])
     }
     return newArray;
