@@ -108,7 +108,7 @@ Object.grabValues = function (obj){
 //Test Cases for each function
 
 function main(){
-    let array = [1, 4, 9, 16];
+    const array = [1, 4, 9, 16];
     //Test for myEach
     array.myEach(console.log);
     //Test for myMap, returns an array
