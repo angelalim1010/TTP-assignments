@@ -50,7 +50,7 @@ Array.prototype.myEvery = function(callback){
 Array.prototype.myReduce = function(callback){
     let val = this[0];
     for(let i = 1; i < this.length; i++){
-        val = callback(val,this[i]);
+        val = callback(this[i],val);
     }
     return val;
 }
