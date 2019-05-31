@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<h1>Buttons page</h1>
+<button id="myBtn">Try me</button>
+<button id="btn">Try me</button>
+<p id="demo"></p>
+
+<br></br>
+
+<script>
+document.getElementById("myBtn").addEventListener("click", function(){
+  document.getElementById("demo").innerHTML = "I'm right";
+});
+document.getElementById("btn").addEventListener("click", function(){
+  document.getElementById("demo").innerHTML = "No I'm right";
+});
+
+</script>
+</body>
+</html>
