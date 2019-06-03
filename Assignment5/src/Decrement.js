@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 class Decrement extends Component{
     constructor(props){
         super(props);
+        this.decrement = this.decrement.bind(this);
         this.state = {
             startNumber: this.props.startNumber,
         }
