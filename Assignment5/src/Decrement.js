@@ -14,7 +14,9 @@ class Decrement extends Component{
 
     render(){
         return(
-            <button onClick={this.decrement}>{this.state.startNumber}</button>
+            <div>
+                {this.state.startNumber}<button onClick={this.decrement}>decrement</button>
+            </div>
         )
     }
 }
