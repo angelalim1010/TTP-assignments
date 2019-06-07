@@ -27,13 +27,13 @@ class Credits extends Component{
     };
     }
 
-    updateCredit = event => {
+    handleChange = event => {
       this.setState({
         [event.target.name]: event.target.value
       });
     };
 
-    handleSubmit = event =>{
+    updateCredit = event =>{
         let newCredit = {
           description: this.state.newDescription,
           amount: parseFloat(this.state.newAmount),
@@ -64,7 +64,7 @@ class Credits extends Component{
         return (
       <div className="creditsForm">
         <Form>
-          <Label for="newDescription">Credit Description:</Label>
+          <Label>Description:</Label>
           <Input
             name="newDescription"
             type="text"
@@ -72,7 +72,7 @@ class Credits extends Component{
             onChange={this.handleChange}
           />
           <br></br>
-          <Label for="newAmount">Credit Amount:</Label>
+          <Label for="newAmount">Amount:</Label>
           <Input
             name="newAmount"
             type="number"
@@ -80,7 +80,7 @@ class Credits extends Component{
             onChange={this.handleChange}
           />
           <br></br>
-          <Label for="newDate">Credit Date:</Label>
+          <Label for="newDate">Date:</Label>
           <Input
             name="newDate"
             type="text"
@@ -88,7 +88,7 @@ class Credits extends Component{
             readOnly
           />
         </Form>
-        <Button onClick={this.handleSubmit}>Add Credit</Button>
+        <Button onClick={this.updateCredit}>Add Credit</Button>
       </div>
     );
     }
@@ -96,7 +96,7 @@ class Credits extends Component{
     render(){
         return (
           <div>
-            <Link to="/">Back to Home</Link>
+            <Link to="/">Home</Link>
             <h1>Credits:</h1>
             <h2>
               <AccountBalance accountBalance={this.state.accountBalance} />

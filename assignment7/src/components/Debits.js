@@ -25,13 +25,13 @@ class Debits extends Component{
     };
   }
 
-  handleChange = e => {
+  handleChange = event => {
     this.setState({
-      [e.target.name]: e.target.value
+      [event.target.name]: event.target.value
     });
   };
 
-  handleSubmit = e => {
+  updateDebit = event => {
     let newDebit = {
       description: this.state.newDescription,
       amount: parseFloat(this.state.newAmount),
@@ -44,11 +44,11 @@ class Debits extends Component{
     }));
   };
 
-  displayDebits = () => {
+  showDebits = () => {
     return (
-      <div className="debits">
+      <div>
         {this.state.debits.map((debit, index) => (
-          <div className="debit" key={index}>
+          <div key={index}>
             <div>Description: {debit.description}</div>
             <div>Amount: {debit.amount}</div>
             <div>Date: {debit.date}</div>
@@ -58,11 +58,11 @@ class Debits extends Component{
     );
   };
 
-  displayForm = () => {
+  showForm = () => {
     return (
       <div className="debitsForm">
         <Form>
-          <Label for="newDescription">Debit Description:</Label>
+          <Label>Description:</Label>
           <Input
             name="newDescription"
             type="text"
@@ -70,7 +70,7 @@ class Debits extends Component{
             onChange={this.handleChange}
           />
           <br></br>
-          <Label for="newAmount">Debit Amount:</Label>
+          <Label for="newAmount">Amount:</Label>
           <Input
             name="newAmount"
             type="number"
@@ -78,7 +78,7 @@ class Debits extends Component{
             onChange={this.handleChange}
           />
           <br></br>
-          <Label for="newDate">Debit Date:</Label>
+          <Label for="newDate">Date:</Label>
           <Input
             name="newDate"
             type="text"
@@ -86,7 +86,7 @@ class Debits extends Component{
             readOnly
           />
         </Form>
-        <Button onClick={this.handleSubmit}>Add Debit</Button>
+        <Button onClick={this.updateDebit}>Add Debit</Button>
       </div>
     );
   };
@@ -94,16 +94,16 @@ class Debits extends Component{
   render() {
     return (
       <div>
-        <Link to="/">Back to Home</Link>
+        <Link to="/">Home</Link>
         <h1>Debits:</h1>
         <h2>
           <AccountBalance accountBalance={this.state.accountBalance} />
         </h2>
         <h2>Total Debits: {this.state.totalDebit}</h2>
         <br></br>
-        {this.displayDebits()}
+        {this.showDebits()}
         <br></br>
-        {this.displayForm()}
+        {this.showForm()}
       </div>
     );
   }
